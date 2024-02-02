@@ -1,11 +1,15 @@
+'use client'
+import { useContext } from 'react'
 import CharacterCard from '../CharacterCard/CharacterCard'
-import GeneralButton from '../GeneralButton/GeneralButton'
+import { MyContext } from '@/context/MyContext'
 
-function Characters({ characters, setCharacters }) {
+function Characters() {
+  const { characters } = useContext(MyContext)
+
   return (
-    <section class=' text-white w-full'>
-      <div className='mt-8 flex flex-wrap gap-8 justify-center items-center'>
-        {characters.map((character) => (
+    <section className=' text-white w-full z-50'>
+      <div className='mt-8 flex flex-wrap gap-8 justify-center items-center z-50'>
+        {characters?.map((character) => (
           <div
             className='flex-col justify-center items-center'
             key={character.id}>
@@ -14,8 +18,8 @@ function Characters({ characters, setCharacters }) {
               name={character.name}
               origin={character.origin.name}
               species={character.species}
+              characterId={character.id}
             />
-            <GeneralButton text='Borrar personaje' />
           </div>
         ))}
       </div>

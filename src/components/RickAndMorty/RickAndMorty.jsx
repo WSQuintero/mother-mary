@@ -3,11 +3,14 @@ import { Button } from '@mui/material'
 import Background from '../BackGround/Background'
 import GeneralButton from '../GeneralButton/GeneralButton'
 import useGetAllCharacters from '@/customHooks/useGetAllCharacters'
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import Characters from '../Characters/Characters'
+import { MyContext } from '@/context/MyContext'
 
 function RickAndMorty() {
-  const { characters, getCharacters, setCharacters } = useGetAllCharacters()
+  const { getCharacters } = useGetAllCharacters()
+  const { characters } = useContext(MyContext)
+
   const handleSearchCharacters = (event) => {
     event.preventDefault()
     getCharacters()
@@ -36,14 +39,7 @@ function RickAndMorty() {
           </div>
         </div>
       </div>
-      <section>
-        {characters.results && (
-          <Characters
-            characters={characters.results}
-            setCharacters={setCharacters}
-          />
-        )}
-      </section>
+      <section>{characters && <Characters />}</section>
     </section>
   )
 }
