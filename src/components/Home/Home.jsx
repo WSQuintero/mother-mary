@@ -1,16 +1,19 @@
 import { Button } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
+import Background from '../BackGround/Background'
+import GeneralButton from '../GeneralButton/GeneralButton'
 
 function Home() {
   return (
-    <div className='w-[90%] min-h-[100vh] flex justify-center items-center relative'>
+    <section className='w-[90%] min-h-[100vh] flex justify-center items-center relative'>
+      <Background />
       <section className=' w-2/4 h-[100vh] pt-20  text-white flex flex-col justify-center  gap-10  z-40'>
         <h1 className=' uppercase w-full xl:w-[961px]  leading-none font-monserrat font-bold text-6xl xl:text-[84px] text-pretty text-shadow-customShadow relative'>
           Collect <br /> Mother Mary <br />
           Art{' '}
           <span className='relative w-[110%]'>
-            nft <div class='elipse rounded-full top-4 right-3'></div>
+            nft <div className='elipse rounded-full top-4 right-3'></div>
           </span>
         </h1>
         <p className='font-outfit lg:text-[20px] max-w-[500px] text-wrap whitespace-line '>
@@ -18,12 +21,7 @@ function Home() {
           to help you make good NFT investments.
         </p>
         <div className='relative'>
-          <Button
-            variant='contained'
-            className='uppercase bg-gradient-to-b from-[#FECB48] hover:bg-red-300  to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textButtonColor text-[11px] font-bold font-monserrat'
-            size={'11px'}>
-            Ver en opensea
-          </Button>
+          <GeneralButton text='Ver en opensea' />
           <Image
             src='/svg/star.svg'
             alt='star'
@@ -44,7 +42,7 @@ function Home() {
           className='object-contain h-[500px] lg:h-[1085px] absolute bottom-0'
         />
       </section>
-    </div>
+    </section>
   )
 }
 
