@@ -9,3 +9,9 @@
   border-bottom-left-radius: 100%;
   transform: matrix(0.99, -0.17, -0.29, 0.96, 0, 0);
 }
+
+.bg-repeat {
+  background-image: url('/img/stars.png'); /* Ruta de tu imagen */
+  background-repeat: repeat; /* Repetir la imagen */
+  background-size: 500px; /* Tamaño automático para que se repita */
+}
