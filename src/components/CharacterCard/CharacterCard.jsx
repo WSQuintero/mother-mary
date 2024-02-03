@@ -28,8 +28,8 @@ function CharacterCard({ image, name, origin, species, characterId }) {
         height={300}
       />
 
-      <div className='relative p-4 sm:p-6 lg:p-8'>
-        <p className='text-sm font-bold uppercase tracking-widest text-pink-900 '>
+      <div className=' p-4 sm:p-6 lg:p-8 h-full relative'>
+        <p className='text-sm font-bold uppercase tracking-widest text-pink-300 px-2 bg-black/50 w-full '>
           {species}
         </p>
 
@@ -39,7 +39,7 @@ function CharacterCard({ image, name, origin, species, characterId }) {
           onClick={handleClick}
           data-id={characterId}
           ref={button}
-          className={`uppercase bg-gradient-to-b p-3 mt-10 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textbuttonColor text-[11px] font-bold  ${monserrat.classname} cursor-pointer z-50`}>
+          className={`uppercase absolute bottom-1 bg-gradient-to-b p-3 mt-10 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textbuttonColor text-[11px] font-bold  ${monserrat.classname} cursor-pointer z-50`}>
           Borrar personaje
         </button>
       </div>

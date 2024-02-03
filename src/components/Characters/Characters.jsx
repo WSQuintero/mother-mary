@@ -1,17 +1,36 @@
-'use client'
-import { useContext } from 'react'
+// Import the necessary dependencies
+import { useContext, useEffect } from 'react'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import { MyContext } from '@/context/MyContext'
+import { monserrat } from '@/app/ui/fonts'
+import useGetAllCharacters from '@/customHooks/useGetAllCharacters'
 
 function Characters() {
-  const { characters } = useContext(MyContext)
+  const { characters, page, setPage } = useContext(MyContext)
+  const { getCharacters } = useGetAllCharacters()
+
+  const handleNextPage = () => {
+    setPage((prev) => prev + 1)
+  }
+
+  const handleBackPage = () => {
+    if (page > 1) {
+      setPage((prev) => prev - 1)
+    }
+  }
+
+  useEffect(() => {
+    if (page > 0) {
+      getCharacters()
+    }
+  }, [page])
 
   return (
-    <section className=' text-white w-full z-50'>
+    <section className='text-white w-full z-50'>
       <div className='mt-8 flex flex-wrap gap-8 justify-center items-center z-50'>
-        {characters?.map((character) => (
+        {characters.map((character) => (
           <div
-            className='flex-col justify-center items-center '
+            className='flex-col justify-center items-center z-50'
             key={character.id}>
             <CharacterCard
               image={character.image}
@@ -22,6 +41,18 @@ function Characters() {
             />
           </div>
         ))}
+      </div>
+      <div className='flex gap-5'>
+        <button
+          onClick={handleBackPage}
+          className={`uppercase bg-blue-600 p-3 mt-20 cursor-pointer text-white rounded-[15px] max-w-[216px] max-h-[66px]  text-[11px] font-bold z-50 ${monserrat.classname} cursor-pointer m-auto `}>
+          Página anterior
+        </button>
+        <button
+          onClick={handleNextPage}
+          className={`uppercase bg-blue-600 p-3 mt-20 cursor-pointer text-white rounded-[15px] max-w-[216px] max-h-[66px]  text-[11px] font-bold z-50 ${monserrat.classname} cursor-pointer m-auto `}>
+          Siguiente página
+        </button>
       </div>
     </section>
   )

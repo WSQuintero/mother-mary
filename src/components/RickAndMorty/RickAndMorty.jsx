@@ -8,17 +8,18 @@ import { monserrat } from '@/app/ui/fonts'
 
 function RickAndMorty() {
   const { getCharacters } = useGetAllCharacters()
-  const { characters } = useContext(MyContext)
+  const { characters, page } = useContext(MyContext)
 
   const handleSearchCharacters = (event) => {
     event.preventDefault()
-    getCharacters()
+    getCharacters(page)
+    console.log(characters)
   }
 
   return (
     <section className='w-[90%] min-h-[100vh] flex justify-center items-center relative flex-col'>
       <Background />
-      <div className='mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center z-40'>
+      <div className='mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center z-50'>
         <div className='mx-auto max-w-3xl text-center'>
           <h2 className='bg-gradient-to-r from-green-500 via-blue-500 to-purple-800 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl'>
             Rick And Morty Characters
@@ -38,7 +39,7 @@ function RickAndMorty() {
           </div>
         </div>
       </div>
-      <section>{characters && <Characters />}</section>
+      <section className='z-50'>{characters.length && <Characters />}</section>
     </section>
   )
 }

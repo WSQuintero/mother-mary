@@ -2,10 +2,10 @@ import { MyContext } from '@/context/MyContext'
 import { useContext } from 'react'
 
 function useGetAllCharacters() {
-  const { setCharacters } = useContext(MyContext)
+  const { setCharacters, page } = useContext(MyContext)
 
   const getCharacters = () => {
-    fetch('https://rickandmortyapi.com/api/character')
+    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
       .then((response) => response.json())
       .then((data) => setCharacters(data.results))
   }
