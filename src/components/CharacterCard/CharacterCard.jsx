@@ -2,10 +2,9 @@
 import { MyContext } from '@/context/MyContext'
 import { monserrat } from '@/app/ui/fonts'
 import Image from 'next/image'
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext } from 'react'
 
 function CharacterCard({ image, name, origin, species, characterId }) {
-  const button = useRef(null)
   const { characters, setCharacters } = useContext(MyContext)
 
   const handleClick = (event) => {
@@ -38,7 +37,6 @@ function CharacterCard({ image, name, origin, species, characterId }) {
         <button
           onClick={handleClick}
           data-id={characterId}
-          ref={button}
           className={`uppercase absolute bottom-1 bg-gradient-to-b p-3 mt-10 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textbuttonColor text-[11px] font-bold  ${monserrat.classname} cursor-pointer z-50`}>
           Borrar personaje
         </button>

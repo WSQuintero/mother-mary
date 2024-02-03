@@ -1,9 +1,9 @@
-.elipse{
+.elipse {
   box-sizing: border-box;
   position: absolute;
   width: 100%;
   height: 60%;
-  border: 3px solid #FDC965;
+  border: 3px solid #fdc965;
   border-radius: 100%;
   border-top-right-radius: 100%;
   border-bottom-left-radius: 100%;
@@ -11,7 +11,7 @@
 }
 
 .bg-repeat {
-  background-image: url('/img/stars.png'); /* Ruta de tu imagen */
+  background-image: url("/img/stars.png"); /* Ruta de tu imagen */
   background-repeat: repeat; /* Repetir la imagen */
   background-size: 500px; /* Tamaño automático para que se repita */
 }

@@ -1,16 +1,16 @@
-import { MyContext } from '@/context/MyContext'
-import { useContext } from 'react'
+import { MyContext } from "@/context/MyContext";
+import { useContext } from "react";
 
 function useGetAllCharacters() {
-  const { setCharacters, page } = useContext(MyContext)
+  const { setCharacters, page } = useContext(MyContext);
 
   const getCharacters = () => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
       .then((response) => response.json())
-      .then((data) => setCharacters(data.results))
-  }
+      .then((data) => setCharacters(data.results));
+  };
 
-  return { getCharacters }
+  return { getCharacters };
 }
 
-export default useGetAllCharacters
+export default useGetAllCharacters;
