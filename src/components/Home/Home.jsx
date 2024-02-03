@@ -9,7 +9,7 @@ function Home() {
       <Background />
       <section className='w-full  sm:w-2/4 h-[100vh] pt-20  text-white flex flex-col justify-center  gap-10  z-40'>
         <h1
-          className={`${monserrat.classname} uppercase w-full xl:w-[961px]  leading-none  font-bold text-3xl xl:text-[84px] text-pretty text-shadow-customShadow relative`}>
+          className={`${monserrat.classname} uppercase w-full xl:w-[961px]  leading-none  font-bold text-3xl xl:text-[70px] text-pretty text-shadow-customShadow relative`}>
           Collect <br /> Mother Mary <br />
           Art{' '}
           <span className='relative w-[110%]'>
@@ -43,7 +43,7 @@ function Home() {
           alt='virgin'
           width={700}
           height={700}
-          className='object-contain h-[500px] lg:h-[1085px] absolute bottom-0'
+          className='object-contain h-[500px]  absolute bottom-0'
         />
       </section>
     </section>
