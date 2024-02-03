@@ -11,7 +11,7 @@ function Characters() {
       <div className='mt-8 flex flex-wrap gap-8 justify-center items-center z-50'>
         {characters?.map((character) => (
           <div
-            className='flex-col justify-center items-center'
+            className='flex-col justify-center items-center '
             key={character.id}>
             <CharacterCard
               image={character.image}

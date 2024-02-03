@@ -1,11 +1,10 @@
 'use client'
-import { Button } from '@mui/material'
 import Background from '../BackGround/Background'
-import GeneralButton from '../GeneralButton/GeneralButton'
 import useGetAllCharacters from '@/customHooks/useGetAllCharacters'
 import { useContext, useEffect } from 'react'
 import Characters from '../Characters/Characters'
 import { MyContext } from '@/context/MyContext'
+import { monserrat } from '@/app/ui/fonts'
 
 function RickAndMorty() {
   const { getCharacters } = useGetAllCharacters()
@@ -31,11 +30,11 @@ function RickAndMorty() {
           </p>
 
           <div className='mt-8 flex flex-wrap justify-center gap-4'>
-            <GeneralButton
-              className='uppercase bg-gradient-to-b p-5 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textButtonColor text-[11px] font-bold font-monserrat'
-              onClick={handleSearchCharacters}
-              text='Ver todos los personajes'
-            />
+            <button
+              className={`${monserrat.classname} uppercase bg-gradient-to-b p-2 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textbuttonColor text-[8px] font-bold `}
+              onClick={handleSearchCharacters}>
+              Ver todos los personajes
+            </button>
           </div>
         </div>
       </div>

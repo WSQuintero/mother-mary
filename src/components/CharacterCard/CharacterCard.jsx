@@ -1,5 +1,6 @@
 'use client'
 import { MyContext } from '@/context/MyContext'
+import { monserrat } from '@/app/ui/fonts'
 import Image from 'next/image'
 import React, { useContext, useEffect, useRef } from 'react'
 
@@ -9,23 +10,20 @@ function CharacterCard({ image, name, origin, species, characterId }) {
 
   const handleClick = (event) => {
     event.preventDefault()
-    console.log(characters)
     const filteredCharacters = characters?.filter(
       (charac) => charac?.id !== characterId
     )
-    console.log(filteredCharacters)
     setCharacters(filteredCharacters)
   }
 
-  useEffect(() => {
-    console.log(characters)
-  }, [characters])
   return (
-    <div href='#' className='group relative block w-[300px] h-[300px]'>
+    <article
+      href='#'
+      className='group relative block w-[300px] h-[300px] rounded-2xl'>
       <Image
         alt='name'
         src={image}
-        className='absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50'
+        className='absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-3xl'
         width={300}
         height={300}
       />
@@ -41,11 +39,11 @@ function CharacterCard({ image, name, origin, species, characterId }) {
           onClick={handleClick}
           data-id={characterId}
           ref={button}
-          className='uppercase bg-gradient-to-b p-3 mt-10 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textButtonColor text-[11px] font-bold font-monserrat cursor-pointer z-50'>
+          className={`uppercase bg-gradient-to-b p-3 mt-10 from-[#FECB48] hover:bg-red-300 to-[#b38512] rounded-[15px] max-w-[216px] max-h-[66px] text-textbuttonColor text-[11px] font-bold  ${monserrat.classname} cursor-pointer z-50`}>
           Borrar personaje
         </button>
       </div>
-    </div>
+    </article>
   )
 }
 
