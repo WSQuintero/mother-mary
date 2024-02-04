@@ -1,6 +1,6 @@
-import Header from "@/app/ui/Header/Header";
-import MainContainer from "@/app/ui/MainContainer/MainContainer";
-import { ContextProvider } from "@/context/MyContext";
+import Header from '@/app/ui/Header/Header'
+import MainContainer from '@/app/ui/MainContainer/MainContainer'
+import { ContextProvider } from '@/app/context/MyContext'
 
 export default function Home() {
   return (
@@ -8,5 +8,5 @@ export default function Home() {
       <Header />
       <MainContainer />
     </ContextProvider>
-  );
+  )
 }

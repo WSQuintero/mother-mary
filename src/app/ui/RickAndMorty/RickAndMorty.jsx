@@ -1,9 +1,9 @@
 'use client'
 import Background from '../BackGround/Background'
-import useGetAllCharacters from '@/customHooks/useGetAllCharacters'
+import useGetAllCharacters from '@/app/customHooks/useGetAllCharacters'
 import { useContext } from 'react'
 import Characters from '../Characters/Characters'
-import { MyContext } from '@/context/MyContext'
+import { MyContext } from '@/app/context/MyContext'
 import { monserrat } from '@/app/ui/fonts'
 
 function RickAndMorty() {
