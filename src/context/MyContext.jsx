@@ -1,8 +1,6 @@
 "use client";
 
-import useGetAllCharacters from "@/customHooks/useGetAllCharacters";
-
-const { createContext, useState, useEffect } = require("react");
+import { createContext, useState } from "react";
 
 const MyContext = createContext();
 
